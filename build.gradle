@@ -1,0 +1,27 @@
+apply plugin: 'java'
+
+tasks.withType(JavaCompile) {
+options.encoding = "GBK"
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'zy.UI.ImportWord'
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'org.apache.poi', name: 'poi-ooxml', version: '3.15'
+}
+
+task helloWorld {
+	println 'configuration should run even only tasks is run'
+	doLast {
+		println 'Hello world!'
+		configurations.compile.each { File file -> println file.name }
+	}
+}
