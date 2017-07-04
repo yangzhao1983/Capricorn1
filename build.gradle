@@ -25,3 +25,8 @@ task helloWorld {
 		configurations.compile.each { File file -> println file.name }
 	}
 }
+
+task copyJars(type:Copy){
+	from configurations.compile
+	into '/Users/kaiser_zhao/Work/project/Capricorn1/dep'
+}
