@@ -5,8 +5,11 @@ New version of Capricorn. Build with gradle, a much stronger tool than ant and m
 1. Add new task copyJars
  
  29 task copyJars(type:Copy){
+ 
  30         from configurations.runtime
+ 
  31         into '$LOCAL_DIR'
+ 
  32 }
  
 2. Run 'gradle copyJars'
